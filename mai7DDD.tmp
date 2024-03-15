@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://8n6gy1rr3g18"]
+
+[ext_resource type="PackedScene" uid="uid://c7ahqvqwysmaf" path="res://player/player.tscn" id="1_kofwt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mdpro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dduds"]
+size = Vector2(1151.5, 209)
+
+[node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_kofwt")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_mdpro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(577.25, 542.5)
+shape = SubResource("RectangleShape2D_dduds")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1.0
+offset_top = 437.0
+offset_right = 1149.0
+offset_bottom = 479.0
